@@ -10,4 +10,17 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  // If you have a backend server running on a different port, you can set up a proxy to avoid CORS issues during development.
+  // server: {
+  //   proxy: {
+  //     '/api': {
+  //       target: 'http://localhost:3000',
+  //       changeOrigin: true,
+  //       secure: false,
+  //     },
+  //   },
+  // },
+  build: {
+    chunkSizeWarningLimit: 1000,
+  },
 });

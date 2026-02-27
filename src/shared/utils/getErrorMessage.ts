@@ -31,6 +31,9 @@ export function getErrorMessage(
       })
       .join('\n');
   }
+  if (error instanceof Error) {
+    return error.message;
+  }
 
   return defaultMsg;
 }

@@ -1,3 +1,31 @@
+# React task
+
+## My assumptions and focus
+
+- setup of environment and tools ,
+- architecture of code
+- basic router setup
+- data flow and storage (mocks only and some assumption on API handlers)
+
+## I didn't focus on
+
+- validation in forms or better UX (e.g. Countries with select options), in real project I would use `react-hook-form`
+- design, RWD, dark/light
+- accessibility
+- pagination
+- leave form guards or confirmation modals (e.g. delete action)
+
+---
+
+# ENVS
+
+set `VITE_API_URL` as axios api url
+set `VITE_USE_MOCKS` as `true` for work with local storage mocked data
+
+Development local environment works with mocked data by default:
+
+---
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -40,15 +68,15 @@ export default defineConfig([
       // other options...
     },
   },
-])
+]);
 ```
 
 You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
 ```js
 // eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+import reactX from 'eslint-plugin-react-x';
+import reactDom from 'eslint-plugin-react-dom';
 
 export default defineConfig([
   globalIgnores(['dist']),
@@ -69,5 +97,5 @@ export default defineConfig([
       // other options...
     },
   },
-])
+]);
 ```

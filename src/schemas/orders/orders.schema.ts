@@ -1,10 +1,10 @@
 import z from 'zod';
-import {IdSchema} from '../common.schema';
+import {EntitySchema} from '../common.schema';
 import {CountrySchema} from './country.schema';
 import {PriceSchema} from './price.schema';
 import {ShippingSchema} from './shipping.schema';
 
-export const OrderSchema = IdSchema.extend({
+export const OrderSchema = EntitySchema.extend({
   price: PriceSchema,
   country: CountrySchema,
   shipping: ShippingSchema,
