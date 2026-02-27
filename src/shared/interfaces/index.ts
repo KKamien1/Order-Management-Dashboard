@@ -1,1 +1,1 @@
-export * from './model.interfaces';
+export * from './routes.interfaces';

@@ -3,20 +3,19 @@ import {getErrorMessage} from '@/shared/utils/getErrorMessage';
 import {Alert} from '@mui/material';
 
 type ErrorMessageProps = {
-  isError: boolean;
   error?: unknown;
 };
 
-export function ErrorMessage({isError, error}: ErrorMessageProps) {
+export function ErrorMessage({error}: ErrorMessageProps) {
   const errorMessage = getErrorMessage(error);
-  return isError ? (
+  return (
     <Alert
       severity='error'
       sx={{
-        mb: 4,
+        m: 4,
       }}
     >
       {errorMessage}
     </Alert>
-  ) : null;
+  );
 }

@@ -1,6 +1,7 @@
 import {api} from '@/api';
 import {OrdersSchema} from '@/schemas';
-import {API_PATH} from '@/shared';
+import {API_PATH, MOCKS_DELAY} from '@/shared';
+import {useMocksStore} from '@/store';
 
 const fetchAllOrders = () =>
   api.get(API_PATH.ORDERS).then((response) => {
@@ -8,12 +9,14 @@ const fetchAllOrders = () =>
     return response.data;
   });
 
-const mockAllOrders = () =>
-  new Promise((resolve) => {
+const mockAllOrders = () => {
+  const {orders} = useMocksStore.getState();
+  return new Promise((resolve) => {
     setTimeout(() => {
-      resolve([]);
-    }, 1000);
+      resolve(orders);
+    }, MOCKS_DELAY);
   });
+};
 
 export const getAllOrders =
   import.meta.env.VITE_USE_MOCKS === 'true' ? mockAllOrders : fetchAllOrders;
