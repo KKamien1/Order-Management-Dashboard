@@ -10,3 +10,10 @@ export const PATH = {
   DASHBOARD: `/${PATHNAME.DASHBOARD}`,
   ORDER: `/${PATHNAME.ORDER}`,
 } as const;
+
+export const QUERY_KEY = {
+  DASHBOARD: PATHNAME.DASHBOARD,
+} as const;
+
+export const DEFAULT_ERROR_MESSAGE =
+  'An error occurred while fetching data. Please try again later.';
